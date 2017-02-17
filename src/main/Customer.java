@@ -30,7 +30,7 @@ public class Customer extends Thread {
 		try{
 			synchronized (Customer.class){
 				System.out.print(this + "->" + "://" + ou + "/" + qui + num);
-				// A COMPLETER : ACQUISITION DE L'OBJET DISTANT
+				obj = (ISupplier) Naming.lookup(qui+num);
 				System.out.println(" est lié a " + obj.name());
 			}
 			try{sleep((int) (Math.random() * 1000));}catch(Exception e){}
