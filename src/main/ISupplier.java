@@ -1,3 +1,4 @@
+package main;
 import java.rmi.Remote; 
 import java.rmi.RemoteException; 
 
@@ -6,21 +7,21 @@ import java.rmi.RemoteException;
  */
 public interface ISupplier extends Remote {
 	/**
-	 * renvoie la velur de la propriÃ©tÃ© os.name
+	 * renvoie la velur de la propriété os.name
 	 * @return la valeur de os.name
 	 * @throws RemoteException
 	 */
 	public String question() throws RemoteException;
 	/**
-	 * renvoie la valeur de la proptiÃ©tÃ© de nom s
-	 * @param s le nom de la propriÃ©tÃ© choisie
-	 * @return la valeur de cette propriÃ©tÃ©
+	 * renvoie la valeur de la proptiété de nom s
+	 * @param s le nom de la propriété choisie
+	 * @return la valeur de cette propriété
 	 * @throws RemoteException
 	 */
 	public String question(String s) throws RemoteException;
 
 	/**
-	 * renvoie le nom du Provider : nom gÃ©nÃ©rique suivi du rang
+	 * renvoie le nom du Provider : nom générique suivi du rang
 	 * @return le nom du Provider
 	 * @throws RemoteException
 	 */

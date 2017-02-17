@@ -1,3 +1,4 @@
+package main;
 import java.rmi.Naming;
 import java.util.Random;
 
