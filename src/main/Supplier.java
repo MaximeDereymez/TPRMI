@@ -5,6 +5,13 @@ import java.rmi.server.UnicastRemoteObject;
 
 public class Supplier extends UnicastRemoteObject implements ISupplier {
 
+	int num;
+	
+	protected Supplier(int num) throws RemoteException {
+		super();
+		this.num = num;
+	}
+
 	@Override
 	public String question() throws RemoteException {
 		// TODO Auto-generated method stub
@@ -22,5 +29,7 @@ public class Supplier extends UnicastRemoteObject implements ISupplier {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public String toString(){ return "supplier"+num ;}
 
 }
