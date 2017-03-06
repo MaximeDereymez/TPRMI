@@ -22,8 +22,8 @@ public class Server {
     }
     try  {
       nom = args[0];
-      port = Integer.parseInt(args[1]);
-      nombre = Integer.parseInt(args[2]);
+      port = Integer.parseInt(args[2]);
+      nombre = Integer.parseInt(args[1]);
     }catch(Exception e) {
       System.out.println("Server <nom générique des objets distants> <nombre de noms> <port du registry>");
       System.exit(1);
@@ -31,6 +31,7 @@ public class Server {
     // installation d'un securityManager
     // A COMPLETER : INSTALLATIOND'UN SECURITYMANAGER
     // A COMPLETER : MISE EN PLACE DU REGISTRY
+    System.getSecurityManager();
     try {
       for(int i=1;i<=nombre;i++){
       	// A COMPLETER : CONSTRUCTION ET EXPORTATION DES OBJETS DISTANTS

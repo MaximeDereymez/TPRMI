@@ -27,6 +27,7 @@ public class Client {
 		}	
 		// installation d'un securityManager 
 		// A COMPLETER : INSTALLATION DU SECURITYMANAGER
+		System.getSecurityManager();
 		// Démarrage des consommateurs
 		for(int i=0;i<nombre;i++)  {
 			new Customer(host,nom,((int)(Math.random()*num))+1,i).start();
