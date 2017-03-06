@@ -6,28 +6,29 @@ import java.rmi.server.UnicastRemoteObject;
 public class Supplier extends UnicastRemoteObject implements ISupplier {
 
 	int num;
+	String nom;
 	
-	protected Supplier(int num) throws RemoteException {
+	protected Supplier(String nom, int num) throws RemoteException {
 		super();
 		this.num = num;
+		this.nom = nom;
 	}
 
 	@Override
 	public String question() throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		return "norm";
 	}
 
 	@Override
 	public String question(String s) throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		return System.getProperty(s);
 	}
 
 	@Override
 	public String name() throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+		return nom+num;
 	}
 	
 	public String toString(){ return "supplier"+num ;}

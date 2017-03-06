@@ -1,7 +1,9 @@
 package main;
 
 import java.rmi.registry.*;
+import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
+import java.rmi.Naming;
 import java.rmi.RMISecurityManager;
 
 /**
@@ -33,8 +35,16 @@ public class Server {
     // A COMPLETER : MISE EN PLACE DU REGISTRY
     System.getSecurityManager();
     try {
+		registry = LocateRegistry.createRegistry(port);
+	} catch (RemoteException e1) {
+		// TODO Auto-generated catch block
+		e1.printStackTrace();
+	}
+    Supplier supp;
+    try {
       for(int i=1;i<=nombre;i++){
-      	// A COMPLETER : CONSTRUCTION ET EXPORTATION DES OBJETS DISTANTS
+      	supp=new Supplier(nom,i);
+      	Naming.bind(supp.name(), supp);
       }
       System.out.println("Tous les objets sont enregistrés dans le serveur d'objets distants");
     } catch (Exception e) {
